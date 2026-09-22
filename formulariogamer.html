@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Formulário Gamer</title>
+<script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+
+<style>
+html{font-family:'Comic Sans MS','cursive';background-color:lightgray;}
+body{margin:0;padding:0;}
+header{background-color:rgb(100,100,100);color:purple;width:100%;height:auto;padding:5px 0;display:flex;align-items:center;justify-content:flex-start;}
+.cont{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px;box-sizing:border-box;align-items:start;}
+section{background-color:white;border-radius:5px;margin:0;width:100%;padding:10px;box-sizing:border-box;}
+.sec{margin-left:10px;margin-right:10px;}
+.box{width:100%;max-width:500px;height:120px;padding:10px;font-size:16px;box-sizing:border-box;}
+button{background-color:rgb(124,47,124);border-radius:5px;text-decoration-line:none;color:white;padding:8px 12px;border:0;cursor:pointer;font-family:'Comic Sans MS','cursive';}
+select{width:400px;max-width:100%;font-size:20px;}
+.box2{width:500px;max-width:100%;font-size:15px;box-sizing:border-box;}
+option,select,input{font-family:'Comic Sans MS','cursive';}
+textarea{font-family:'Comic Sans MS','cursive';}
+.img1{float:right;width:350px;height:auto;max-width:350px;margin-right:10px;object-fit:contain;}
+.logo{width:120px;height:120px;object-fit:contain;float:left;margin-left:10px;margin-right:10px;}
+button:hover{opacity:0.9;}
+.rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;}
+.rating input{display:none;}
+.rating label{font-size:2rem;color:#ccc;cursor:pointer;padding:5px;transition:color 0.2s ease;}
+.rating label::before{content:"★";}
+.rating input:checked~label{color:black;}
+
+#iniciarDoom{font-family:'Comic Sans MS','cursive';background-color:rgb(124,47,124);color:white;border:0;border-radius:5px;padding:8px 12px;cursor:pointer;}
+#doomContainer{width:100%;margin-top:20px;clear:both;}
+#dos{width:100%;height:600px;overflow:hidden;position:relative;}
+#dos img{max-width:none;}
+#dos svg{max-width:none;}
+#dos button{font-family:Arial,sans-serif;font-size:14px;padding:4px 8px;}
+#dos canvas{display:block;max-width:100%;}
+
+@media(max-width:800px){
+.cont{grid-template-columns:1fr;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<a href="formulariogamer.html">
+<img src="Imagens\Controle 2.png" class="logo">
+</a>
+
+<h2>Formulário Gamer - Faça sua avaliação e prove que é um</h2>
+</header>
+
+<div class="cont">
+
+<section>
+<div class="sec">
+
+<h2>UM POUCO SOBRE SEU ESTILO GAMER</h2>
+
+<form>
+
+<div>
+<label for="nome">NOME DO USUÁRIO:</label><br>
+<input class="box2" type="text" id="nome" name="nome" placeholder="DIGITE SEU NOME">
+</div>
+
+<hr>
+
+<div>
+<p><strong>QUAL PLATAFORMA VOCÊ JOGA OS SEUS JOGOS?</strong></p>
+
+<select name="plataforma" id="plataforma">
+<option value="" disabled selected>Escolha uma opção...</option>
+<option value="console">CONSOLE</option>
+<option value="pc">PC</option>
+<option value="mobile">MOBILE</option>
+<option value="portatil">PORTÁTIL</option>
+</select>
+</div>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgXZEaN_oOKd9ZofkdgfcOJCBSdW7R6YAysaXb0_vnnA&s=10" class="img1">
+
+<div>
+<p><strong>QUAL O SEU ESTILO DE JOGO?(MARQUE QUANTOS QUISER)</strong></p>
+
+<input type="checkbox" id="RPG" name="ling_RPG" value="RPG">
+<label for="RPG">RPG</label><br>
+
+<input type="checkbox" id="AVENTURA" name="ling_AVENTURA" value="AVENTURA">
+<label for="AVENTURA">AVENTURA</label><br>
+
+<input type="checkbox" id="AÇÃO" name="ling_AÇÃO" value="AÇÃO">
+<label for="AÇÃO">AÇÃO</label><br>
+
+<input type="checkbox" id="SIMULAÇÃO" name="ling_SIMULAÇÃO" value="SIMULAÇÃO">
+<label for="SIMULAÇÃO">SIMULAÇÃO</label><br>
+
+<input type="checkbox" id="MISTÉRIO" name="ling_MISTÉRIO" value="MISTÉRIO">
+<label for="MISTÉRIO">MISTÉRIO</label><br>
+
+<input type="checkbox" id="HEROSHOOTERS" name="ling_HEROSHOOTERS" value="HEROSHOOTERS">
+<label for="HEROSHOOTERS">HERO SHOOTERS</label><br>
+
+<input type="checkbox" id="FPS" name="ling_FPS" value="FPS">
+<label for="FPS">FPS</label><br>
+
+<input type="checkbox" id="TERROR" name="ling_TERROR" value="TERROR">
+<label for="TERROR">TERROR</label><br>
+
+<input type="checkbox" id="LUTA" name="ling_LUTA" value="LUTA">
+<label for="LUTA">LUTA</label><br>
+
+<input type="checkbox" id="CORRIDA" name="ling_CORRIDA" value="CORRIDA">
+<label for="CORRIDA">CORRIDA</label><br>
+
+<input type="checkbox" id="SOBREVIVÊNCIA" name="ling_SOBREVIVÊNCIA" value="SOBREVIVÊNCIA">
+<label for="SOBREVIVÊNCIA">SOBREVIVÊNCIA</label><br>
+
+<input type="checkbox" id="ESPORTES" name="ling_ESPORTES" value="ESPORTES">
+<label for="ESPORTES">ESPORTES</label><br>
+
+<input type="checkbox" id="RITMO" name="ling_RITMO" value="RITMO">
+<label for="RITMO">RITMO</label><br>
+
+<input type="checkbox" id="BATTLEROYALE" name="ling_BATTLEROYALE" value="BATTLEROYALE">
+<label for="BATTLEROYALE">BATTLE ROYALE</label><br>
+
+<input type="checkbox" id="MUNDOABERTO" name="ling_MUNDOABERTO" value="MUNDOABERTO">
+<label for="MUNDOABERTO">MUNDO ABERTO</label><br>
+
+<input type="checkbox" id="SANDBOX" name="ling_SANDBOX" value="SANDBOX">
+<label for="SANDBOX">SANDBOX</label><br>
+
+<input type="checkbox" id="ESTRATÉGIA" name="ling_ESTRATÉGIA" value="ESTRATÉGIA">
+<label for="ESTRATÉGIA">ESTRATÉGIA</label><br>
+
+<input type="checkbox" id="OUTROS" name="ling_OUTROS" value="OUTROS">
+<label for="OUTROS">OUTROS</label><br>
+</div>
+
+<div>
+<p>QUAL SEU JOGO FAVORITO?</p>
+<input class="box2" type="text" name="jogo_favorito" placeholder="DIGITE AQUI">
+</div>
+
+<div>
+<p>QUAL PIOR JOGO PARA VOCÊ?</p>
+<input class="box2" type="text" name="pior_jogo" placeholder="DIGITE AQUI">
+</div>
+
+<div>
+<p><strong>VOCÊ COMPRA OS JOGOS?</strong></p>
+
+<select name="compra_jogos" id="compra_jogos">
+<option value="" disabled selected>Escolha uma opção...</option>
+<option value="sim">SIM, EU GASTO DINHEIRO</option>
+<option value="nao">NÃO, EU PIRATEIO TUDO</option>
+<option value="caro">SÓ OS MAIS CAROS</option>
+</select>
+</div>
+
+</form>
+
+<br>
+
+</div>
+</section>
+
+<section>
+<div class="sec">
+
+<h2>SUA AVALIAÇÃO</h2>
+
+<div>
+<p>ESCOLHA UM JOGO</p>
+<input class="box2" type="text" name="jogo_avaliacao" placeholder="DIGITE AQUI">
+</div>
+
+<h3>QUANTAS ESTRELAS VOCÊ ACHA DESSE JOGO?</h3>
+
+<div class="rating">
+
+<input type="radio" id="star5" name="rating" value="5">
+<label for="star5"></label>
+
+<input type="radio" id="star4" name="rating" value="4">
+<label for="star4"></label>
+
+<input type="radio" id="star3" name="rating" value="3">
+<label for="star3"></label>
+
+<input type="radio" id="star2" name="rating" value="2">
+<label for="star2"></label>
+
+<input type="radio" id="star1" name="rating" value="1">
+<label for="star1"></label>
+
+</div>
+
+<div>
+<p>DÊ UMA AVALIAÇÃO SOBRE ELE</p>
+<textarea class="box" name="avaliacao" placeholder="DIGITE AQUI"></textarea>
+</div>
+
+<br>
+
+<button type="submit">ENVIAR QUESTIONÁRIO</button> <button type="reset">RESETAR TUDO</button>
+
+</div>
+
+<p>NÃO SE SINTA ENTEDIADO RESPONDENDO NOSSAS PERGUNTAS...</p>
+
+<button id="iniciarDoom">INICIAR DOOM</button>
+
+<div id="doomContainer" style="display:none;">
+<div id="dos"></div>
+</div>
+
+</section>
+
+</div>
+
+<script>
+document.getElementById("iniciarDoom").addEventListener("click",function(){
+
+document.getElementById("doomContainer").style.display="block";
+this.style.display="none";
+
+Dos(document.getElementById("dos"),{
+url:"https://v8.js-dos.com/bundles/doom.jsdos"
+});
+
+});
+</script>
+
+</body>
+</html>
